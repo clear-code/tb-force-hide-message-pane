@@ -4,5 +4,6 @@
 
 (function (aGlobal) {
   var ForceHideMessagePaneHandler = {};
+  ChangeMessagePaneVisibility(false);
   aGlobal.ForceHideMessagePaneHandler = ForceHideMessagePaneHandler;
 })(this);
