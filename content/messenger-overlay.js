@@ -5,7 +5,7 @@
 (function (aGlobal) {
   var ForceHideMessagePaneHandler = {
     run: function run() {
-      ChangeMessagePaneVisibility(false);
+      ChangeMessagePaneVisibility(true);
     }
   };
 
