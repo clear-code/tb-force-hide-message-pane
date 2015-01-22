@@ -3,7 +3,15 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 (function (aGlobal) {
-  var ForceHideMessagePaneHandler = {};
-  ChangeMessagePaneVisibility(false);
+  var ForceHideMessagePaneHandler = {
+    run: function run() {
+      ChangeMessagePaneVisibility(false);
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", function onDOMContentLoaded(aEvent) {
+    document.removeEventListener("DOMContentLoaded", onDOMContentLoaded);
+    ForceHideMessagePaneHandler.run();
+  });
   aGlobal.ForceHideMessagePaneHandler = ForceHideMessagePaneHandler;
 })(this);
