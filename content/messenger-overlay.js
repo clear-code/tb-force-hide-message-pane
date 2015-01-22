@@ -3,9 +3,20 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 (function (aGlobal) {
+  let observerService = Cc["@mozilla.org/observer-service;1"]
+                          .getService(Ci.nsIObserverService);
   var ForceHideMessagePaneHandler = {
     run: function run() {
-      ChangeMessagePaneVisibility(true);
+      observerService.addObserver(this, "mail-startup-done", false);
+    },
+    // nsIObserver
+    observe: function observe(aEvent) {
+      observerService.removeObserver(this, "mail-startup-done", false);
+      setTimeout(function () {
+        if (!IsMessagePaneCollapsed()) {
+          MsgToggleMessagePane();
+        }
+      }, 0);
     }
   };
 
