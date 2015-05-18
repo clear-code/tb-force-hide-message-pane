@@ -1,0 +1,31 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+@namespace xbl url("http://www.mozilla.org/xbl");
+
+/* hide message pane permanentaly in classic layout, when there is visible thread pane */
+:root.force-disable-message-pane #displayDeck:not([collapsed="true"]) ~ #threadpane-splitter,
+:root.force-disable-message-pane #displayDeck:not([collapsed="true"]) ~ #messagepaneboxwrapper,
+/* hide message pane permanentaly in wide layout */
+:root.force-disable-message-pane #mailContent > #threadpane-splitter,
+:root.force-disable-message-pane #mailContent > #messagepaneboxwrapper,
+/* hide message pane permanentaly in vertical layout */
+:root.force-disable-message-pane #threadPaneBox > #threadpane-splitter,
+:root.force-disable-message-pane #threadPaneBox > #messagepaneboxwrapper,
+/* hide menuitems to change layout */
+:root.force-disable-message-pane #menu_showMessage,
+:root.force-disable-message-pane #appmenu_showMessage,
+:root.force-disable-message-pane #messagePaneClassic,
+:root.force-disable-message-pane #appmenu_messagePaneClassic,
+:root.force-disable-message-pane #messagePaneWide,
+:root.force-disable-message-pane #appmenu_messagePaneWide,
+:root.force-disable-message-pane #messagePaneVertical,
+:root.force-disable-message-pane #appmenu_messagePaneVertical,
+:root.force-disable-message-pane #viewMenuAfterPaneVerticalSeparator,
+:root.force-disable-message-pane #appmenu_viewMenuAfterPaneVerticalSeparator
+{
+  visibility: collapse !important;
+}

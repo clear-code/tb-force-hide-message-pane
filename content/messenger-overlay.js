@@ -23,6 +23,11 @@
   document.addEventListener("DOMContentLoaded", function onDOMContentLoaded(aEvent) {
     document.removeEventListener("DOMContentLoaded", onDOMContentLoaded);
     ForceHideMessagePaneHandler.run();
+    var prefs = Cc["@mozilla.org/preferences;1"]
+                  .getService(Ci.nsIPrefBranch)
+                  .QueryInterface(Ci.nsIPrefBranch2);
+    if (prefs.getBoolPref("extensions.force-hide-message-pane@clear-code.com.alwaysDisabled"))
+      document.documentElement.classList.add("force-disable-message-pane");
   });
   aGlobal.ForceHideMessagePaneHandler = ForceHideMessagePaneHandler;
 })(this);
