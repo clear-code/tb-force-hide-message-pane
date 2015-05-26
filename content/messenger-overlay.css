@@ -10,11 +10,11 @@
 :root.force-disable-message-pane #displayDeck:not([collapsed="true"]) ~ #threadpane-splitter,
 :root.force-disable-message-pane #displayDeck:not([collapsed="true"]) ~ #messagepaneboxwrapper,
 /* hide message pane permanentaly in wide layout */
-:root.force-disable-message-pane #mailContent > #threadpane-splitter,
-:root.force-disable-message-pane #mailContent > #messagepaneboxwrapper,
+:root.force-disable-message-pane #mailContent > #messengerBox:not([collapsed="true"]) ~ #threadpane-splitter,
+:root.force-disable-message-pane #mailContent > #messengerBox:not([collapsed="true"]) ~ #messagepaneboxwrapper,
 /* hide message pane permanentaly in vertical layout */
-:root.force-disable-message-pane #threadPaneBox > #threadpane-splitter,
-:root.force-disable-message-pane #threadPaneBox > #messagepaneboxwrapper,
+:root.force-disable-message-pane #threadPaneBox > #threadContentArea:not([collapsed="true"]) ~ #threadpane-splitter,
+:root.force-disable-message-pane #threadPaneBox > #threadContentArea:not([collapsed="true"]) ~ #messagepaneboxwrapper,
 /* hide menuitems to change layout */
 :root.force-disable-message-pane #menu_showMessage,
 :root.force-disable-message-pane #appmenu_showMessage,
