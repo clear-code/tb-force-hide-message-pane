@@ -5,7 +5,7 @@
   <RDF:Description RDF:about="urn:mozilla:install-manifest"
                    em:id="force-hide-message-pane@clear-code.com"
                    em:name="Force Hide Message Pane"
-                   em:version="0.2"
+                   em:version="0.3"
                    em:type="2"
                    em:description="Force hide message pane at startup."
                    em:creator="ClearCode Inc."
