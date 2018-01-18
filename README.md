@@ -6,6 +6,10 @@
 
 Force hide message pane at startup.
 
+# Download
+
+https://addons.mozilla.org/thunderbird/addon/force-hide-message-pane/
+
 # License
 
 MPL 2.0
