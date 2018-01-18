@@ -13,8 +13,17 @@
     observe: function observe(aEvent) {
       observerService.removeObserver(this, "mail-startup-done", false);
       setTimeout(function () {
-        if (!IsMessagePaneCollapsed()) {
+        if (IsMessagePaneCollapsed())
+          return;
+        let currentTabInfo = document.getElementById('tabmail').currentTabInfo;
+        if (currentTabInfo.mode.name == 'folder') {
           MsgToggleMessagePane();
+        }
+        else {
+          // MsgToggleMessagePane does nothing for non folder tab.
+          gMessageDisplay._visible = false;
+          document.getElementById('threadpane-splitter').setAttribute('state', 'collapsed');
+          document.getElementById('messagepaneboxwrapper').setAttribute('collapsed', 'true');
         }
       }, 0);
     }
